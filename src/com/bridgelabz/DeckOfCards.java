@@ -1,35 +1,33 @@
 package com.bridgelabz;
+import java.util.ArrayList;
 
 public class DeckOfCards {
-	private String[] suits = { "Clubs", "Diamonds", "Hearts", "Spades" };
-	private String[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace" };
-	int cards= suits.length * ranks.length;
-	
-	String[] deckInitialize() {
-		String[] deck = new String[this.cards];
-		for (int i = 0; i < ranks.length; i++) {
-			for (int j = 0; j < suits.length; j++) {
-				deck[suits.length * i + j] = ranks[i] + " of " + suits[j];
-				System.out.println(deck[suits.length * i + j]);
-			}
-		}
-		
-		for (int i = 0; i < cards; i++) {
-			int r = i + (int) (Math.random() * (cards - i));
-			String temp = deck[r];
-			deck[r] = deck[i];
-			deck[i] = temp;
-		}
-		return deck;
+public ArrayList<String> cardsDeck = new ArrayList<>();
 
+public void deckOfCards() {
+String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
+
+String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace"};
+
+int numOfCards = suits.length * ranks.length;
+
+
+System.out.println("\nNumber of cards in the deck is : " +numOfCards);
+
+
+for (int i = 0; i < ranks.length; i++) {
+
+    for (int j = 0; j < suits.length; j++) {
+        
+        cardsDeck.add(ranks[i] + " " + suits[j]);
+    }
+}
+}
+
+public static void main(String[] args) {
+    
+	DeckOfCards cards = new DeckOfCards();
+	cards.deckOfCards();
 	}
-	
-	public static void main(String[] args) {
-	    System.out.println("welcome to deck of cards program");
-		DeckOfCards deckOfCards = new DeckOfCards();
-		deckOfCards.deckInitialize();
-
-	}
-
 }
 
