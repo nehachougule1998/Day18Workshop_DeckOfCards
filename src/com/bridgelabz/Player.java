@@ -1,8 +1,9 @@
 package com.bridgelabz;
 import java.util.Scanner;
-public class PlayerClass {
-	
-	 public void noOfPlayers() {
+
+public class Player {
+
+public void noOfPlayers() {
 	        
 	        System.out.print("\nEnter number of players minimum 2 , maximum 4 : ");
 	        Scanner sc = new Scanner(System.in);
@@ -18,7 +19,13 @@ public class PlayerClass {
 	            System.out.println("Please enter number of players in the Range");
 	            
 	            noOfPlayers();   
-	        }  
-	        
-	    }
+	        }     
+	  }
+	 
+	 public static void Playersequence(int player) {
+	        for (int i = 1; i <= player; i++) {
+	            System.out.println("Player " + i + " Getting card:");
+	        }
+	 }       
 }
+
