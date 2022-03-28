@@ -1,6 +1,6 @@
 package com.bridgelabz;
 import java.util.Scanner;
-public class PlayerClass {
+public class Player {
 	
 	 public void noOfPlayers() {
 	        
